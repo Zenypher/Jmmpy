@@ -1,0 +1,10 @@
+.root {
+    -fx-bg-color: #f1f5f9;
+    -fx-bg-color-muted: #e2e8f0;
+
+    -fx-text-color: #020617;
+    -fx-text-color-muted: #0f172a;
+
+    -fx-background-color: -fx-bg-color;
+    -fx-text-fill: -fx-text-color;
+}

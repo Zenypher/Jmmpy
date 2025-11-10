@@ -1,0 +1,42 @@
+* {
+  -fx-font-family: "Poppins";
+}
+
+/* Welcome Scene */
+.welcome-label {
+  -fx-font-size: 350%;
+  -fx-text-fill: linear-gradient(
+    from 0% 0% to 0% 100%,
+    #38bdf8 0%,
+    #2563eb 100%
+  );
+}
+
+.welcome-bold {
+  -fx-font-weight: bolder;
+}
+
+.welcome-lighter {
+  -fx-font-weight: 500;
+}
+
+.btn {
+  -fx-padding: 20px 30px;
+  -fx-font-size: 150%;
+  -fx-font-weight: 700;
+  -fx-background-radius: 40px;
+  -fx-text-fill: #f1f5f9;
+  -fx-background-color: #60a5fa;
+}
+
+.btn:hover {
+  -fx-background-color: #3b82f6;
+}
+
+/* Theme Selection Scene */
+
+.stack-pane {
+  -fx-border-color: black;
+  -fx-border-width: 20;
+  -fx-border-style: solid;
+}

@@ -9,14 +9,23 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class Configuration {
+public class ConfigManager {
+
+    private static ConfigManager instance;
     private Map<String, String> config;
     private Path configPath;
 
-    public Configuration(String filename) {
+    private ConfigManager(String filename) {
         this.configPath = Paths.get(filename);
         this.config = new HashMap<>();
         loadConfig();
+    }
+
+    public static ConfigManager getInstance(String fileName) {
+        if(instance == null) {
+            instance = new ConfigManager(fileName);
+        }
+        return instance;
     }
 
     private void loadConfig() {

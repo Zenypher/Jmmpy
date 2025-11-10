@@ -1,8 +1,10 @@
 module ro.ase.sebastianiosif.mmp {
     requires javafx.controls;
-    requires javafx.fxml;
+    requires javafx.media;
+    requires java.desktop;
+    requires javafx.graphics;
 
+    opens ro.ase.sebastianiosif.mmp;
 
-    opens ro.ase.sebastianiosif.mmp to javafx.fxml;
     exports ro.ase.sebastianiosif.mmp;
 }

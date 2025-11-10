@@ -1,0 +1,24 @@
+* {
+  -fx-text-fill: -fx-text-color-muted;
+}
+
+.root {
+  -fx-bg-color: #020617;
+  -fx-bg-color-muted: #0f172a;
+
+  -fx-text-color: #f8fafc;
+  -fx-text-color-muted: #f1f5f9;
+
+  -fx-text-dark: #020617;
+  -fx-text-dark-muted: #0f172a;
+
+  -fx-background-color: -fx-bg-color;
+}
+
+.button {
+  -fx-text-fill: -fx-text-dark;
+}
+
+.list-view {
+  -fx-background-color: -fx-bg-color-muted;
+}

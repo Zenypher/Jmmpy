@@ -1,26 +1,24 @@
-package ro.ase.sebastianiosif.mmp.controllers;
+package ro.ase.sebastianiosif.mmp.utilities;
 
 import javafx.event.ActionEvent;
 import javafx.scene.Node;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import ro.ase.sebastianiosif.mmp.MMPApplication;
 import ro.ase.sebastianiosif.mmp.scenes.MainScene;
 import ro.ase.sebastianiosif.mmp.scenes.WelcomeScene;
-import ro.ase.sebastianiosif.mmp.utilities.ThemeManager;
 
-public class SceneManagerController {
+public class SceneManager {
 
-    private static SceneManagerController instance;
+    private static SceneManager instance;
     private Stage stage;
+    private Scene scene;
 
-    private SceneManagerController() {
+    private SceneManager() {
     }
 
-    public static SceneManagerController getInstance() {
-        if(instance == null ) {
-            instance = new SceneManagerController();
+    public static SceneManager getInstance() {
+        if (instance == null) {
+            instance = new SceneManager();
         }
         return instance;
     }
@@ -33,7 +31,7 @@ public class SceneManagerController {
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
         MainScene mainScene = new MainScene();
-        Scene scene = mainScene.getScene();
+        scene = mainScene.getScene();
 
         ThemeManager.getInstance().registerScene(scene);
 
@@ -45,7 +43,7 @@ public class SceneManagerController {
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
         WelcomeScene welcomeScene = new WelcomeScene();
-        Scene scene = welcomeScene.getScene();
+        scene = welcomeScene.getScene();
 
         ThemeManager.getInstance().registerScene(scene);
 

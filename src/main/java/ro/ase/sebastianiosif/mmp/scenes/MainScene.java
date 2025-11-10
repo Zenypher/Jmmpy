@@ -16,7 +16,7 @@ import ro.ase.sebastianiosif.mmp.utilities.ThemeManager;
 
 public class MainScene {
 
-    private Scene scene;
+    private static Scene scene;
     private final BorderPane root;
 
     private ListView<File> listView;
@@ -27,7 +27,7 @@ public class MainScene {
 
         listView = new ListView<>();
 
-        Button btn = new Button("Switch");
+        Button btn = new Button("Switch Scenes");
 
         btn.setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -54,7 +54,7 @@ public class MainScene {
 
     }
 
-    public Scene getScene() {
+    public static Scene getScene() {
         return scene;
     }
 

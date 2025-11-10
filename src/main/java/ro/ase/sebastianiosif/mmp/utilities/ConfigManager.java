@@ -22,7 +22,7 @@ public class ConfigManager {
     }
 
     public static ConfigManager getInstance(String fileName) {
-        if(instance == null) {
+        if (instance == null) {
             instance = new ConfigManager(fileName);
         }
         return instance;
@@ -64,6 +64,8 @@ public class ConfigManager {
         config.put("version", "alpha 25.11.09");
         config.put("gettingStarted", "false");
         config.put("theme", "light");
+        config.put("min_height", "600");
+        config.put("min_width", "900");
         saveConfig();
     }
 

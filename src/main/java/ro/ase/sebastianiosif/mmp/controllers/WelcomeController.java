@@ -2,9 +2,12 @@ package ro.ase.sebastianiosif.mmp.controllers;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.scene.Node;
+import javafx.stage.Stage;
+import ro.ase.sebastianiosif.mmp.MMPApplication;
 import ro.ase.sebastianiosif.mmp.scenes.WelcomeScene;
-import ro.ase.sebastianiosif.mmp.scenes.welcomeScenes.ThemePage;
-import ro.ase.sebastianiosif.mmp.scenes.welcomeScenes.WelcomePage;
+import ro.ase.sebastianiosif.mmp.scenes.welcomePages.ThemePage;
+import ro.ase.sebastianiosif.mmp.scenes.welcomePages.WelcomePage;
 import ro.ase.sebastianiosif.mmp.utilities.SceneManager;
 import ro.ase.sebastianiosif.mmp.utilities.ThemeManager;
 import ro.ase.sebastianiosif.mmp.utilities.ThemeManager.Theme;
@@ -30,10 +33,25 @@ public class WelcomeController {
     public void load() {
         themePage = new ThemePage();
 
+        WelcomeScene.getCloseButton().setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                System.out.println("M-ai apasat");
+                Stage currentStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+                currentStage.close();
+                System.exit(0);
+            }
+        });
+
         WelcomePage.getStartButton().setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-                WelcomeScene.getScene().setRoot(themePage.getRoot());
+                try {
+                    WelcomeScene.getScene().setRoot(themePage.getRoot());
+                } catch (Exception e) {
+                    System.err.println("ERROR:" + e.getMessage());
+                    e.printStackTrace();
+                }
             }
         });
 

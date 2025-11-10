@@ -22,3 +22,7 @@
 .list-view {
   -fx-background-color: -fx-bg-color-muted;
 }
+
+.theme-selector-text {
+  -fx-text-fill: -fx-text-color;
+}

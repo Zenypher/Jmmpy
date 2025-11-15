@@ -1,9 +1,0 @@
-# Configuration File
-// Format: key=value
-
-min_height=600
-name=MMP (MultiMedia Player)
-theme=dark
-gettingStarted=true
-version=alpha 25.11.09
-min_width=900

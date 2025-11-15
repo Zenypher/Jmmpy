@@ -1,7 +1,3 @@
-* {
-  -fx-text-fill: -fx-text-color-muted;
-}
-
 .root {
   -fx-bg-color: #020617;
   -fx-bg-color-muted: #0f172a;
@@ -15,14 +11,47 @@
   -fx-background-color: -fx-bg-color;
 }
 
-.button {
-  -fx-text-fill: -fx-text-dark;
+.list-view {
+  -fx-background-color: transparent;
 }
 
-.list-view {
-  -fx-background-color: -fx-bg-color-muted;
+.left-sidebar {
+    -fx-background-color: -fx-bg-color-muted;
+}
+
+.list-view .list-cell {
+    -fx-text-fill: -fx-text-color-muted;
 }
 
 .theme-selector-text {
   -fx-text-fill: -fx-text-color;
+}
+
+/* ==== TAB ==== */
+.tab-pane .tab {
+    -fx-background-color: #0f172a;
+}
+
+.unsupported-label {
+    -fx-text-fill: -fx-text-color-muted;
+}
+
+/* ===== DARK MODE TOOLTIPS ===== */
+
+.tooltip {
+    -fx-background-color: rgba(45, 52, 63, 0.98);
+    -fx-background-radius: 6px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.4), 10, 0.0, 0, 3);
+    -fx-padding: 3px 5px;
+    -fx-font-size: 10px;
+    -fx-text-fill: #e8eaed;
+}
+
+.tooltip .text {
+    -fx-text-fill: #e8eaed;
+}
+
+/* ==== MEDIA ==== */
+.music-label {
+    -fx-text-fill: -fx-text-color-muted;
 }

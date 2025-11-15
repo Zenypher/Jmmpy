@@ -1,3 +1,4 @@
+/* Main application styles */
 * {
   -fx-font-family: "Poppins";
 }
@@ -17,59 +18,251 @@
 }
 
 .welcome-lighter {
-  -fx-font-weight: 500;
+  -fx-font-weight: 100;
 }
 
+.welcome-btn {
+    -fx-padding: 10px 20px;
+    -fx-font-size: 20px;
+}
+
+/* Custom buttons */
+
 .btn {
-  -fx-padding: 10px 20px;
-  -fx-font-size: 20px;
   -fx-font-weight: 700;
   -fx-background-radius: 40px;
-  -fx-text-fill: #f1f5f9;
-  -fx-background-color: #60a5fa;
+  -fx-background-color: #3b82f6;
+    -fx-padding: 5px 10px;
+    -fx-font-size: 13px;
+    -fx-text-fill: white;
 }
 
 .btn:hover {
-  -fx-background-color: #3b82f6;
+  -fx-background-color: #2563eb;
+}
+
+.btn:disabled {
+    -fx-background-color: #999999;
 }
 
 /* Theme Selection Scene */
 
-.stack-pane {
-  -fx-border-color: black;
-  -fx-border-width: 20;
-  -fx-border-style: solid;
-}
-
 .theme-btn {
   -fx-padding: 5px 30px;
-  -fx-font-size: 16px;
-}
-
-.theme-btn:hover {
-  -fx-font-size: 18px;
+  -fx-font-size: 20px;
 }
 
 .theme-selector-title {
-  -fx-text-fill: #60a5fa;
-  -fx-font-size: 28px;
+  -fx-text-fill: #3b82f6;
+  -fx-font-size: 32px;
   -fx-font-weight: bold;
 }
 
-.theme-box {
-  -fx-border-color: #60a5fa;
-  -fx-border-radius: 30px;
-  -fx-max-width: 600;
-  -fx-padding: 20 5 20 5;
-}
-
+/* Close button */
 .close-btn {
-  -fx-pref-aspect-ratio: 1;
   -fx-text-fill: #f1f5f9;
-  -fx-padding: 20 20 20 20;
-  -fx-background-color: #60a5fa;
+  -fx-background-color: #3b82f6;
+    -fx-pref-width: 32px;
+    -fx-pref-height: 32px;
+    -fx-alignment: center;
+    -fx-background-radius: 6px;
 }
 
 .close-btn:hover {
-  -fx-background-color: red;
+  -fx-background-color: #ef4444;
+}
+
+/* List View */
+.list-cell {
+    -fx-padding: 3px;
+    -fx-text-weight: bold;
+}
+
+.list-cell:hover {
+  -fx-background-color: #3b82f6;
+    -fx-text-fill: #f1f5f9;
+}
+
+.list-cell:selected {
+    -fx-background-color: #2563eb;
+    -fx-text-fill: #93c5fd;
+}
+
+/* Main Scene */
+.toggle-theme-btn {
+    -fx-padding: 5px 5px;
+}
+
+.left-sidebar {
+    -fx-padding: 5 10px;
+    -fx-spacing: 10px;
+}
+
+/* Tab header area */
+.tab-pane .tab-header-area {
+    -fx-padding: 5px 10px 0 10px;
+}
+
+/* Individual tab */
+.tab-pane .tab {
+    -fx-margin: 0 20px 0 0;
+    -fx-padding: 5px 15px;
+    -fx-spacing: 0 10px;
+}
+
+/* Tab label text */
+.tab-pane .tab .tab-label {
+    -fx-text-fill: #6c757d;
+    -fx-font-size: 13px;
+    -fx-font-weight: 500;
+}
+
+/* Tab hover effect - zoom and highlight */
+.tab-pane .tab:hover {
+    -fx-background-color: #60a5fa;
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 4, 0.0, 0, 1);
+}
+
+.tab-pane .tab:hover .tab-label {
+    -fx-text-fill: #fcfeff;
+}
+
+/* Selected tab - zoomed in appearance */
+.tab-pane .tab:selected {
+    -fx-scale-x: 1.08;
+    -fx-scale-y: 1.08;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.15), 8, 0.0, 0, -2);
+}
+
+.tab-pane .tab:selected .tab-label {
+    -fx-text-fill: #f1f5f9;
+    -fx-font-weight: 600;
+}
+
+/* Tab content area */
+.tab-pane .tab-content-area {
+    -fx-padding: 10px;
+    -fx-alignment: center;
+}
+
+/* Tab navigation arrows (when there are many tabs) */
+.tab-pane .tab-header-area .headers-region .control-buttons-tab {
+    -fx-background-color: transparent;
+    -fx-padding: 5px;
+}
+
+.tab-pane .tab-header-area .tab-down-button,
+.tab-pane .tab-header-area .tab-right-button,
+.tab-pane .tab-header-area .tab-left-button {
+    -fx-background-color: #e9ecef;
+    -fx-background-radius: 5px;
+    -fx-padding: 5px;
+}
+
+.tab-pane .tab-header-area .tab-down-button:hover,
+.tab-pane .tab-header-area .tab-right-button:hover,
+.tab-pane .tab-header-area .tab-left-button:hover {
+    -fx-background-color: #3b82f6;
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+    -fx-cursor: hand;
+}
+
+/* Tab close button - Custom styled */
+.tab-pane .tab .tab-close-button {
+    -fx-background-color: #93c5fd;
+    -fx-background-radius: 50%;
+    -fx-padding: 5px;
+    -fx-margin: 0 0 0 5px;
+    -fx-min-width: 18px;
+    -fx-min-height: 18px;
+    -fx-max-width: 18px;
+    -fx-max-height: 18px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 2, 0.0, 0, 1);
+}
+
+/* Close button hover - zoom and color change */
+.tab-pane .tab .tab-close-button:hover {
+    -fx-background-color: #ef4444;
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+    -fx-cursor: hand;
+}
+
+/* Close button pressed */
+.tab-pane .tab .tab-close-button:pressed {
+    -fx-background-color: #e74c3c;
+    -fx-scale-x: 0.9;
+    -fx-scale-y: 0.9;
+}
+
+/* Close button on selected tab */
+.tab-pane .tab:selected .tab-close-button {
+    -fx-background-color: #f8f9fa;
+}
+
+.tab-pane .tab:selected .tab-close-button:hover {
+    -fx-background-color: #ff6b6b;
+}
+
+.unsupported-label {
+    -fx-font-size: 16px;
+}
+
+/* Media player controls */
+.mediaplayer-button {
+    -fx-padding: 5px;
+    -fx-background-color: #60a5fa;
+    -fx-background-radius: 50%;
+}
+
+.mediaplayer-button:hover{
+    -fx-background-color: #3b82f6;
+}
+
+/* MediaPlayer Slider Track */
+.mediaplayer-slider .track {
+    -fx-background-color: #e0e0e0;
+    -fx-background-radius: 3px;
+    -fx-pref-height: 6px;
+}
+
+/* MediaPlayer Slider Track when pressed */
+.mediaplayer-slider:pressed .track {
+    -fx-background-color: #d0d0d0;
+}
+
+/* MediaPlayer Slider Thumb (the draggable circle) */
+.mediaplayer-slider .thumb {
+    -fx-background-color: #2196F3;
+    -fx-background-radius: 8px;
+    -fx-pref-width: 16px;
+    -fx-pref-height: 16px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 4, 0, 0, 1);
+}
+
+/* MediaPlayer Slider Thumb on hover */
+.mediaplayer-slider .thumb:hover {
+    -fx-background-color: #1E88E5;
+    -fx-cursor: hand;
+}
+
+/* MediaPlayer Slider Thumb when pressed */
+.mediaplayer-slider .thumb:pressed {
+    -fx-background-color: #1976D2;
+    -fx-pref-width: 18px;
+    -fx-pref-height: 18px;
+}
+
+/* Filled portion of the track (optional, for progress indication) */
+.mediaplayer-slider .track .fill {
+    -fx-background-color: #2196F3;
+    -fx-background-radius: 3px;
+}
+
+.music-label {
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
 }

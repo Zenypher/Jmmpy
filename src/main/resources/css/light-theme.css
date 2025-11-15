@@ -1,14 +1,59 @@
-* {
-    -fx-text-fill: -fx-text-color;
+.root {
+  -fx-bg-color: #f1f5f9;
+  -fx-bg-color-muted: #e2e8f0;
+
+  -fx-text-color: #020617;
+  -fx-text-color-muted: #0f172a;
+
+  -fx-background-color: -fx-bg-color;
 }
 
-.root {
-    -fx-bg-color: #f1f5f9;
-    -fx-bg-color-muted: #e2e8f0;
+.list-view {
+  -fx-background-color: transparent;
+}
 
-    -fx-text-color: #020617;
-    -fx-text-color-muted: #0f172a;
+.left-sidebar {
+    -fx-background-color: -fx-bg-color-muted;
+}
 
-    -fx-background-color: -fx-bg-color;
+.btn {
+    -fx-text-fill: -fx-bg-color;
+}
 
+/* ==== TABS ==== */
+.tab-pane .tab {
+    -fx-background-color: #e2e8f0;
+}
+
+.tab-pane:focus .tab:selected {
+    -fx-background-color: #3b82f6;
+}
+
+.tab-pane .tab .tab-label {
+    -fx-text-fill: #0f172a;
+}
+
+.unsupported-label {
+    -fx-text-fill: -fx-text-color-muted;
+}
+
+/* ===== TOOLTIP ===== */
+
+.tooltip {
+    -fx-background-color: rgba(255, 255, 255, 0.98);
+    -fx-background-radius: 6px;
+    -fx-padding: 3px 5px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.15), 8, 0.0, 0, 2);
+    -fx-font-size: 10px;
+    -fx-text-fill: #2c3e50;
+}
+
+.tooltip .text {
+    -fx-text-fill: #2c3e50;
+    -fx-font-weight: 400;
+}
+
+/* Media */
+.music-label {
+    -fx-text-fill: -fx-text-color-muted;
 }

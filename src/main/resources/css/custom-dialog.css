@@ -1,0 +1,49 @@
+/* Dialog Pane Background */
+.custom-save-dialog{
+    -fx-padding: 10px 20px;
+}
+
+/* All text labels */
+.custom-save-dialog .label {
+    -fx-text-fill: #0f172a;
+}
+
+/* Header text specifically */
+.custom-save-dialog .header-panel .label {
+    -fx-font-weight: bold;
+    -fx-font-size: 20px;
+}
+
+/* Button bar */
+.custom-save-dialog .button-bar {
+    -fx-padding: 20px;
+    -fx-alignment: center;
+}
+
+/* Buttons */
+.custom-save-dialog .button {
+    -fx-background-color: #3b82f6;
+    -fx-text-fill: white;
+    -fx-background-radius: 5px;
+    -fx-alignment: center;
+    -fx-padding: 5px 10px;
+}
+
+/* Button hover effect */
+.custom-save-dialog .button:hover {
+    -fx-background-color: #2563eb;
+}
+
+/* Button pressed effect */
+.custom-save-dialog .button:pressed {
+    -fx-background-color: #1d4ed8;
+}
+
+.custom-save-dialog .button:default {
+    -fx-background-color: #60a5fa;
+    -fx-text-fill: white;
+}
+
+.custom-save-dialog .button:default:hover {
+    -fx-background-color: #93c5fd;
+}

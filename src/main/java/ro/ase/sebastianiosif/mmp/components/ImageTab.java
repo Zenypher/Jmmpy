@@ -1,53 +1,54 @@
 package ro.ase.sebastianiosif.mmp.components;
 
 import javafx.geometry.Pos;
-import javafx.scene.CacheHint;
-import javafx.scene.control.ScrollPane;
-import javafx.scene.control.Tab;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
+import javafx.scene.control.*;
+import javafx.scene.image.*;
 import javafx.scene.layout.StackPane;
-
 import java.io.File;
 
-/**
- * Reprezintă un tab dedicat afișării imaginilor.
- * <p>
- * Imaginea este încărcată într-un {@link ImageView} cu păstrarea proporțiilor
- * și este plasată într-un {@link ScrollPane} pentru a permite zoom automat
- * prin redimensionarea ferestrei.
- */
-public class ImageTab extends Tab {
+/** Background decoding with bounded preview resolution and viewport-based sizing. */
+public final class ImageTab extends Tab implements DisposableTab {
+    private Image image;
+    private boolean disposed;
 
-    /**
-     * Creează un tab nou pentru afișarea unei imagini.
-     *
-     * @param file fișierul imagine care va fi încărcat și afișat
-     */
     public ImageTab(File file) {
         setText(file.getName());
+        setOnClosed(event -> dispose());
+        Label state = new Label("Loading image…");
+        state.setWrapText(true);
+        StackPane root = new StackPane(state);
+        root.setAlignment(Pos.CENTER);
+        setContent(root);
+        try {
+            image = new Image(file.toURI().toString(), 2048, 2048, true, true, true);
+            ImageView view = new ImageView(image);
+            view.setPreserveRatio(true);
+            view.setSmooth(true);
+            ScrollPane pane = new ScrollPane(new StackPane(view));
+            pane.setFitToWidth(true);
+            pane.setFitToHeight(true);
+            pane.viewportBoundsProperty().addListener((observable, before, bounds) -> {
+                view.setFitWidth(Math.max(1, bounds.getWidth()));
+                view.setFitHeight(Math.max(1, bounds.getHeight()));
+            });
+            Runnable update = () -> {
+                if (disposed) return;
+                if (image.isError()) {
+                    state.setText("Cannot display this image: " + (image.getException() == null ? file.getName() : image.getException().getMessage()));
+                    state.getStyleClass().add("error-label");
+                    root.getChildren().setAll(state);
+                } else if (image.getProgress() >= 1) root.getChildren().setAll(pane);
+            };
+            image.errorProperty().addListener((observable, before, after) -> update.run());
+            image.progressProperty().addListener((observable, before, after) -> update.run());
+            update.run();
+        } catch (RuntimeException e) { state.setText("Cannot display this image: " + e.getMessage()); }
+    }
 
-        Image image = new Image(file.toURI().toString());
-
-        ImageView imageView = new ImageView(image);
-        imageView.setSmooth(true);
-        imageView.setCache(true);
-        imageView.setCacheHint(CacheHint.SPEED);
-        imageView.setPreserveRatio(true);
-
-        // Centrarea imaginii
-        StackPane imageCenter = new StackPane(imageView);
-        imageCenter.setAlignment(Pos.CENTER);
-
-        // Scroll automat pentru imagini mari
-        ScrollPane imagePane = new ScrollPane(imageCenter);
-        imagePane.setFitToHeight(true);
-        imagePane.setFitToWidth(true);
-
-        // Imaginea se redimensionează odată cu tab-ul
-        imageView.fitHeightProperty().bind(imagePane.heightProperty());
-        imageView.fitWidthProperty().bind(imagePane.widthProperty());
-
-        this.setContent(imagePane);
+    @Override public void dispose() {
+        if (disposed) return;
+        disposed = true;
+        if (image != null) image.cancel();
+        setContent(null);
     }
 }

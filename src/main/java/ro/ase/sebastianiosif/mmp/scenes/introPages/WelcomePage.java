@@ -17,70 +17,11 @@ import ro.ase.sebastianiosif.mmp.controllers.IntroController;
 import ro.ase.sebastianiosif.mmp.factory.CloseButtonFactory;
 import ro.ase.sebastianiosif.mmp.managers.SceneManager;
 
-/**
- * Clasa care reprezintă pagina de bun venit din fluxul de introducere
- * (onboarding).
- * <p>
- * Aceasta este prima pagină pe care utilizatorul o vede la rularea inițială a
- * aplicației.
- * Pagina afișează:
- * <ul>
- * <li>Titlul aplicației "Welcome to MMP - MultiMedia Player"</li>
- * <li>Un buton "Start" pentru a continua configurarea</li>
- * <li>Un buton de închidere în colțul din dreapta-sus</li>
- * </ul>
- * </p>
- * <p>
- * Pagina include o animație de intrare care creează un efect vizual plăcut:
- * <ul>
- * <li>Fade-in (creșterea opacității de la 0 la 1)</li>
- * <li>Scale (mărirea de la 0 la 1.1, apoi la 1.0)</li>
- * <li>Slide-up (translatare verticală de la +50 la 0)</li>
- * </ul>
- * Animația durează 1 secundă și utilizează interpolări pentru tranziții fluide.
- * </p>
- * 
- * @author Sebastian Iosif
- * @version 0.0.1
- * @since 2025
- * @see IntroController
- * @see ThemePage
- * @see CloseButtonFactory
- */
+/** Welcome screen and its entry animation. */
 public class WelcomePage {
 
-    /**
-     * Instanța singleton a scenei de bun venit.
-     */
     private static Scene scene;
 
-    /**
-     * Constructor care creează și configurează pagina de bun venit.
-     * <p>
-     * Constructorul efectuează următoarele operații:
-     * <ul>
-     * <li>Creează elementele UI (label-uri, butoane)</li>
-     * <li>Configurează layout-ul folosind {@link BorderPane}</li>
-     * <li>Inițializează și pornește animația de intrare</li>
-     * <li>Configurează acțiunile butoanelor (Start și Close)</li>
-     * </ul>
-     * </p>
-     * <p>
-     * Animația utilizează JavaFX {@link Timeline} cu următoarele etape:
-     * <ol>
-     * <li><b>0ms:</b> Elementele sunt invizibile (opacity=0, scale=0,
-     * translateY=50)</li>
-     * <li><b>500ms:</b> Bounce effect (opacity=0.8, scale=1.1, translateY=0)</li>
-     * <li><b>1000ms:</b> Stare finală (opacity=1, scale=1.0)</li>
-     * </ol>
-     * </p>
-     * 
-     * @param controller controller-ul pentru gestionarea navigării între paginile
-     *                   de introducere
-     * @see IntroController#goThemePage()
-     * @see Timeline
-     * @see KeyFrame
-     */
     public WelcomePage(IntroController controller) {
 
         // Welcome label
@@ -137,20 +78,6 @@ public class WelcomePage {
         scene = new Scene(root);
     }
 
-    /**
-     * Returnează instanța singleton a scenei de bun venit.
-     * <p>
-     * Dacă scena nu a fost încă creată, aceasta va fi inițializată automat
-     * prin apelarea constructorului cu controller-ul din {@link SceneManager}.
-     * </p>
-     * <p>
-     * Această metodă implementează pattern-ul Lazy Initialization pentru
-     * a asigura că scena este creată doar când este necesară.
-     * </p>
-     * 
-     * @return instanța {@link Scene} a paginii de bun venit
-     * @see SceneManager#introController
-     */
     public static Scene getScene() {
         if (scene == null) {
             new WelcomePage(SceneManager.introController);

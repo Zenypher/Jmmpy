@@ -1,4 +1,5 @@
 .root {
+  -fx-error-color: #fca5a5;
   -fx-bg-color: #020617;
   -fx-bg-color-muted: #0f172a;
 
@@ -55,3 +56,4 @@
 .music-label {
     -fx-text-fill: -fx-text-color-muted;
 }
+.tab-pane .tab:selected .tab-label { -fx-text-fill: white; }

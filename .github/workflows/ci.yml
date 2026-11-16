@@ -1,0 +1,37 @@
+name: Build and test
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  verify:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '25'
+          cache: maven
+      - name: Verify
+        shell: bash
+        run: ./mvnw -B verify
+  ui:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '25'
+          cache: maven
+      - name: Install display dependencies
+        run: sudo apt-get update && sudo apt-get install -y xvfb libgtk-3-0t64 libasound2t64
+      - name: Run UI regression tests
+        run: xvfb-run -a ./mvnw -B -Dmmp.uiTests=true verify
+      - name: Build runtime image
+        run: ./mvnw -B javafx:jlink

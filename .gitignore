@@ -40,3 +40,8 @@ build/
 
 ### Application config ###
 config.txt
+
+# Local IDE state and legacy application data
+.idea/
+location.txt
+out/

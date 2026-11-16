@@ -1,6 +1,7 @@
+.label { -fx-text-fill: -fx-text-color; }
 /* Main application styles */
 * {
-  -fx-font-family: "Poppins";
+  -fx-font-family: "System";
 }
 
 /* Welcome Scene */
@@ -75,7 +76,7 @@
 /* List View */
 .list-cell {
     -fx-padding: 3px;
-    -fx-text-weight: bold;
+    -fx-font-weight: bold;
 }
 
 .list-cell:hover {
@@ -105,9 +106,7 @@
 
 /* Individual tab */
 .tab-pane .tab {
-    -fx-margin: 0 20px 0 0;
     -fx-padding: 5px 15px;
-    -fx-spacing: 0 10px;
 }
 
 /* Tab label text */
@@ -175,7 +174,6 @@
     -fx-background-color: #93c5fd;
     -fx-background-radius: 50%;
     -fx-padding: 5px;
-    -fx-margin: 0 0 0 5px;
     -fx-min-width: 18px;
     -fx-min-height: 18px;
     -fx-max-width: 18px;
@@ -266,3 +264,21 @@
     -fx-font-size: 28px;
     -fx-font-weight: bold;
 }
+
+/* Shared palette for controls, dialogs, and error states. */
+.root {
+    -fx-base: -fx-bg-color;
+    -fx-control-inner-background: -fx-bg-color;
+    -fx-accent: #3b82f6;
+    -fx-focus-color: #3b82f6;
+    -fx-text-background-color: -fx-text-color;
+    -fx-text-inner-color: -fx-text-color;
+}
+.error-label { -fx-text-fill: -fx-error-color; }
+.main-controls { -fx-spacing: 20px; -fx-padding: 5px; }
+.theme-choice { -fx-padding: 20px; -fx-border-color: #3b82f6; -fx-border-radius: 20px; }
+.tab-pane .tab:selected { -fx-background-color: #2563eb; }
+.tab-pane .tab:selected .tab-label { -fx-text-fill: white; }
+.list-cell { -fx-background-color: -fx-bg-color; -fx-text-fill: -fx-text-color; }
+.list-cell:filled:hover { -fx-background-color: #3b82f6; -fx-text-fill: white; }
+.list-cell:filled:selected { -fx-background-color: #2563eb; -fx-text-fill: white; }

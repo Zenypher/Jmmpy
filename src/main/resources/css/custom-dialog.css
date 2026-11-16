@@ -5,7 +5,7 @@
 
 /* All text labels */
 .custom-save-dialog .label {
-    -fx-text-fill: #0f172a;
+    -fx-text-fill: -fx-text-color;
 }
 
 /* Header text specifically */
@@ -47,3 +47,4 @@
 .custom-save-dialog .button:default:hover {
     -fx-background-color: #93c5fd;
 }
+.custom-save-dialog, .custom-save-dialog .header-panel { -fx-background-color: -fx-bg-color; }

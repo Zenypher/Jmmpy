@@ -1,50 +1,7 @@
-/* Dialog Pane Background */
-.custom-save-dialog{
-    -fx-padding: 10px 20px;
-}
-
-/* All text labels */
-.custom-save-dialog .label {
-    -fx-text-fill: -fx-text-color;
-}
-
-/* Header text specifically */
-.custom-save-dialog .header-panel .label {
-    -fx-font-weight: bold;
-    -fx-font-size: 20px;
-}
-
-/* Button bar */
-.custom-save-dialog .button-bar {
-    -fx-padding: 20px;
-    -fx-alignment: center;
-}
-
-/* Buttons */
-.custom-save-dialog .button {
-    -fx-background-color: #3b82f6;
-    -fx-text-fill: white;
-    -fx-background-radius: 5px;
-    -fx-alignment: center;
-    -fx-padding: 5px 10px;
-}
-
-/* Button hover effect */
-.custom-save-dialog .button:hover {
-    -fx-background-color: #2563eb;
-}
-
-/* Button pressed effect */
-.custom-save-dialog .button:pressed {
-    -fx-background-color: #1d4ed8;
-}
-
-.custom-save-dialog .button:default {
-    -fx-background-color: #60a5fa;
-    -fx-text-fill: white;
-}
-
-.custom-save-dialog .button:default:hover {
-    -fx-background-color: #93c5fd;
-}
-.custom-save-dialog, .custom-save-dialog .header-panel { -fx-background-color: -fx-bg-color; }
+.custom-save-dialog { -fx-background-color: -fx-surface; -fx-padding: 20px; }
+.custom-save-dialog .header-panel { -fx-background-color: transparent; -fx-padding: 0 0 14px; }
+.custom-save-dialog .header-panel .label { -fx-font-size: 19px; -fx-font-weight: 700; }
+.custom-save-dialog .content.label { -fx-text-fill: -fx-text-color-muted; -fx-padding: 8px 0 20px; }
+.custom-save-dialog .button-bar { -fx-padding: 8px 0 0; }
+.custom-save-dialog .button:default { -fx-background-color: #575add; -fx-border-color: transparent; -fx-text-fill: white; }
+.custom-save-dialog .button:default:hover { -fx-background-color: #4649c9; }

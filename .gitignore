@@ -1,47 +1,58 @@
-target/
-!.mvn/wrapper/maven-wrapper.jar
-!**/src/main/**/target/
-!**/src/test/**/target/
-.kotlin
+# Build outputs (anchored so similarly named source/resource folders remain trackable)
+/target/
+/out/
+/build/
+/dist/
+/bin/
+*.class
 
-### IntelliJ IDEA ###
-.idea/modules.xml
-.idea/jarRepositories.xml
-.idea/compiler.xml
-.idea/libraries/
-*.iws
+# Local IDE metadata
+/.idea/
+/.vscode/
 *.iml
 *.ipr
-
-### Eclipse ###
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
-.sts4-cache
-
-### NetBeans ###
+*.iws
+/.classpath
+/.project
+/.settings/
+/.factorypath
+/.apt_generated/
 /nbproject/private/
 /nbbuild/
-/dist/
 /nbdist/
-/.nb-gradle/
-build/
-!**/src/main/**/build/
-!**/src/test/**/build/
 
-### VS Code ###
-.vscode/
+# Application data: legacy working-directory files and portable data directories
+/config.txt
+/location.txt
+/.jmp/
+/.mmp/
 
-### Mac OS ###
+# Local credentials and environment overrides; retain shareable templates
+/.aws/
+.env
+.env.*
+!.env.example
+!.env.sample
+!.env.template
+
+# Runtime logs and JVM diagnostics
+/logs/
+*.log
+hs_err_pid*.log
+replay_pid*.log
+*.hprof
+
+# Editor temporary files
+*~
+*.swp
+*.swo
+
+# macOS and Windows filesystem metadata
 .DS_Store
+._*
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
 
-### Application config ###
-config.txt
-
-# Local IDE state and legacy application data
-.idea/
-location.txt
-out/
+# Keep Maven wrapper files, source assets, and CI configuration version-controlled.
+# Do not add blanket *.jar, *.zip, image, or media exclusions here.

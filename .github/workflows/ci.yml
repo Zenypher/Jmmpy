@@ -32,6 +32,6 @@ jobs:
       - name: Install display dependencies
         run: sudo apt-get update && sudo apt-get install -y xvfb libgtk-3-0t64 libasound2t64
       - name: Run UI regression tests
-        run: xvfb-run -a ./mvnw -B -Dmmp.uiTests=true verify
+        run: xvfb-run -a ./mvnw -B -Djmp.uiTests=true verify
       - name: Build runtime image
         run: ./mvnw -B javafx:jlink

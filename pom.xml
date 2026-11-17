@@ -5,9 +5,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>ro.ase.sebastianiosif</groupId>
-    <artifactId>MMP</artifactId>
+    <artifactId>java-multimedia-player</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <name>MMP</name>
+    <name>Java Multimedia Player</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -69,7 +69,7 @@
                 <configuration>
                     <useModulePath>false</useModulePath>
                     <systemPropertyVariables>
-                        <mmp.dataDir>${project.build.directory}/test-data</mmp.dataDir>
+                        <jmp.dataDir>${project.build.directory}/test-data</jmp.dataDir>
                     </systemPropertyVariables>
                 </configuration>
             </plugin>
@@ -82,10 +82,10 @@
                         <!-- Default configuration for running with: mvn clean javafx:run -->
                         <id>default-cli</id>
                         <configuration>
-                            <mainClass>ro.ase.sebastianiosif.mmp/ro.ase.sebastianiosif.mmp.MMPApplication</mainClass>
-                            <launcher>app</launcher>
-                            <jlinkZipName>app</jlinkZipName>
-                            <jlinkImageName>app</jlinkImageName>
+                            <mainClass>ro.ase.sebastianiosif.jmp/ro.ase.sebastianiosif.jmp.JMPApplication</mainClass>
+                            <launcher>java-multimedia-player</launcher>
+                            <jlinkZipName>java-multimedia-player</jlinkZipName>
+                            <jlinkImageName>java-multimedia-player</jlinkImageName>
                             <noManPages>true</noManPages>
                             <stripDebug>true</stripDebug>
                             <noHeaderFiles>true</noHeaderFiles>
